@@ -1,0 +1,43 @@
+<!-- Barra de ferramentas -->
+<mat-toolbar color="primary">
+    <button class="menu" mat-icon-button (click)="sidenav.toggle()">
+    	<mat-icon> menu </mat-icon>
+    </button>
+    <span>Green Parking</span>
+</mat-toolbar>
+<mat-sidenav-container class="container">
+	<mat-sidenav #sidenav [opened]="true" mode="side">
+    	<mat-nav-list>
+        	<a mat-list-item routerLink="/pages/carro/listar">
+          		<div class="item">
+            		<mat-icon class="icon"> list </mat-icon>
+            		<span> Listar Carros </span>
+          		</div>
+        	</a>
+        	<a mat-list-item routerLink="/pages/carro/cadastrar">
+          		<div class="item">
+            		<mat-icon class="icon"> add </mat-icon>
+            		<span> Cadastrar Carro </span>
+          		</div>
+        	</a>
+        	<a mat-list-item routerLink="/pages/patio/listar">
+            	<div class="item">
+              		<mat-icon class="icon"> list </mat-icon>
+              		<span> Listar Patios </span>
+            	</div>
+          	</a>
+          	<a mat-list-item routerLink="/pages/patio/cadastrar">
+            	<div class="item">
+              		<mat-icon class="icon"> add </mat-icon>
+              		<span> Cadastrar Patio </span>
+            	</div>
+          	</a>
+      	</mat-nav-list>
+      	<!-- <a routerLink="/pages/produto/cadastrar"> Cadastrar </a> -->
+    </mat-sidenav>
+    <mat-sidenav-content class="content">
+    	<!-- Conteúdo -->
+      	<router-outlet> </router-outlet>
+    </mat-sidenav-content>
+</mat-sidenav-container>
+  

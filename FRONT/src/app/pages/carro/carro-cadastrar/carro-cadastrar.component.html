@@ -1,0 +1,52 @@
+<mat-card>
+	<mat-card-header>
+    	<mat-card-title>Cadastrar Produto</mat-card-title>
+      	<mat-card-subtitle>&nbsp;</mat-card-subtitle>
+    </mat-card-header>
+    <mat-card-content>
+    	<mat-form-field class="input" id="marca">
+        	<mat-label>Marca</mat-label>
+        	<input
+          		placeholder="Ex. Audi"
+          		matInput
+          		type="text"
+          		[(ngModel)]="marca"
+        	/>
+      	</mat-form-field>
+      	<mat-form-field class="input" id="descricao">
+        	<mat-label>Modelo</mat-label>
+        	<input
+          	placeholder="Ex. A3 Turbo"
+          	matInput
+          	type="text"
+          	[(ngModel)]="modelo"
+        	/>
+      	</mat-form-field>
+      	<mat-form-field class="input" id="placa">
+        	<mat-label>Placa</mat-label>
+        	<input
+          		placeholder="Ex. ABC-5D67"
+          		matInput
+          		type="text"
+          		[(ngModel)]="placa"
+        	/>
+      	</mat-form-field>
+      	<mat-form-field class="input" id="patio">
+        	<mat-label>Patio</mat-label>
+        	<mat-select [(ngModel)]="patioId">
+          		<mat-option
+            		*ngFor="let p of patios"
+            		[value]="p.patioId"
+          		>
+            		{{ p.nome }}
+          		</mat-option>
+        	</mat-select>
+      	</mat-form-field>
+    </mat-card-content>
+    <mat-card-actions>
+      	<button color="warn" mat-stroked-button (click)="cadastrar()">
+        	Cadastrar
+      	</button>
+    </mat-card-actions>
+</mat-card>
+  
