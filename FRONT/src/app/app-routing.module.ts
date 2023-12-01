@@ -11,7 +11,7 @@ import { PatioListarCarrosComponent } from "./pages/patio/patio-listar-carros/pa
 const routes: Routes = [
 	{
     	path: "",
-    	component: CarroListarComponent,
+    	component: PatioListarCarrosComponent,
   	},
   	{
     	path: "pages/carro/listar",
@@ -24,10 +24,6 @@ const routes: Routes = [
   	{
     	path: "pages/carro/alterar/:id",
     	component: CarroAlterarComponent,
-  	},
-  	{
-    	path: ".",
-    	component: PatioListarComponent,
   	},
   	{
     	path: "pages/patio/listar",
