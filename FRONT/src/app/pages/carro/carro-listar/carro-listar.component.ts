@@ -1,10 +1,6 @@
 import { HttpClient } from "@angular/common/http";
 import { Component } from "@angular/core";
 import { MatSnackBar } from "@angular/material/snack-bar";
-import {
-  MatTable,
-  MatTableDataSource,
-} from "@angular/material/table";
 import { Carro } from "../../../models/carro.model";
 
 @Component({

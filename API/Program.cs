@@ -31,6 +31,7 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 // * Sempre lembre de adicionar o Cors ao container de injeção de dependências. *
+// Posicioná-lo depois da UseAuthorization e antes da MapControllers
 app.UseCors
 (
     c => c.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader()

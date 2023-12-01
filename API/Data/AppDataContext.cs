@@ -15,6 +15,6 @@ public class AppDataContext : DbContext
     public AppDataContext(DbContextOptions<AppDataContext> options) : base(options){}
     
     /* Declaração das classes que queremos que vire tabela no banco de dados - nesse caso, a tabela 'Patios' e a tabela 'Carros'.*/
-    public DbSet<Patio> Patios { get; set;}
+    public DbSet<Patio> Patios { get; set; }
     public DbSet<Carro> Carros { get; set; }
 }

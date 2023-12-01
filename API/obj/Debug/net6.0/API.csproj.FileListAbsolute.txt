@@ -126,3 +126,5 @@
 /Users/viniciuseduardocarvalho/Documents/GreenParking/API/obj/Debug/net6.0/ref/API.dll
 /Users/viniciuseduardocarvalho/Documents/GreenParking/API/bin/Debug/net6.0/package-lock.json
 /Users/viniciuseduardocarvalho/Documents/GreenParking/API/bin/Debug/net6.0/package.json
+/Users/viniciuseduardocarvalho/Desktop/GreenParking/API/bin/Debug/net6.0/package-lock.json
+/Users/viniciuseduardocarvalho/Desktop/GreenParking/API/bin/Debug/net6.0/package.json
