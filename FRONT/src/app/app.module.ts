@@ -28,6 +28,7 @@ import { CarroAlterarComponent } from './pages/carro/carro-alterar/carro-alterar
 import { PatioCadastrarComponent } from "./pages/patio/patio-cadastrar/patio-cadastrar.component";
 import { PatioListarComponent } from "./pages/patio/patio-listar/patio-listar.component";
 import { PatioAlterarComponent } from "./pages/patio/patio-alterar/patio-alterar.component";
+import { PatioListarCarrosComponent } from "./pages/patio/patio-listar-carros/patio-listar-carros.component";
 
 @NgModule({
   	declarations: [
@@ -38,6 +39,7 @@ import { PatioAlterarComponent } from "./pages/patio/patio-alterar/patio-alterar
     	PatioCadastrarComponent,
     	PatioListarComponent,
     	PatioAlterarComponent,
+		PatioListarCarrosComponent,
   	],
   
 	imports: [

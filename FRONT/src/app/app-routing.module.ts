@@ -6,6 +6,7 @@ import { CarroAlterarComponent } from "./pages/carro/carro-alterar/carro-alterar
 import { PatioListarComponent } from "./pages/patio/patio-listar/patio-listar.component";
 import { PatioCadastrarComponent } from "./pages/patio/patio-cadastrar/patio-cadastrar.component";
 import { PatioAlterarComponent } from "./pages/patio/patio-alterar/patio-alterar.component";
+import { PatioListarCarrosComponent } from "./pages/patio/patio-listar-carros/patio-listar-carros.component";
 
 const routes: Routes = [
 	{
@@ -39,6 +40,10 @@ const routes: Routes = [
   	{
     	path: "pages/patio/alterar/:id",
     	component: PatioAlterarComponent,
+  	},
+	{
+    	path: "pages/patio/listar-carros",
+    	component: PatioListarCarrosComponent,
   	},
 ];
 
