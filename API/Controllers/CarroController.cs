@@ -119,7 +119,7 @@ public class CarroController : ControllerBase
                     //Retorna Não-encontrado.
                     return NotFound();
                 }
-                //Do contrário, prossegue-se com o cadastramento  dos dados fornecidos no Body.
+                //Do contrário, prossegue-se com a alteração dos dados fornecidos no Body.
                 carroCadastrado.Patio = patio;
                 carroCadastrado.Marca = carro.Marca;
                 carroCadastrado.Modelo = carro.Modelo;
@@ -129,7 +129,7 @@ public class CarroController : ControllerBase
                 _context.SaveChanges();
                 return Ok();
             }
-            //Caso o pátio seja nulo, retorna não-encontrado.
+            //Caso o carro seja nulo, retorna não-encontrado.
             return NotFound();
         }
         catch (Exception e)

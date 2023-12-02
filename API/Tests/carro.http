@@ -1,0 +1,25 @@
+//Aqui constam as rotas de teste para cada função da Controller de carros.
+
+GET https://localhost:7273/api/carro/listar
+
+GET https://localhost:7273/api/carro/buscar/6
+
+POST https://localhost:7273/api/carro/cadastrar
+Content-Type: application/json
+
+{
+    "carroId" : 1,
+    "marca" : "Subaru",
+    "modelo" : "Outback 4x4",
+    "placa" : "ABC-1D23",
+    "patioId" : 1
+}
+
+PUT https://localhost:7273/api/carro/alterar/6
+Content-Type: application/json
+
+{
+    "modelo" : "Crosstrek"
+}
+
+DELETE https://localhost:7273/api/carro/deletar/6

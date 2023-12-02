@@ -1,7 +1,12 @@
+//Cliente Http do Angular responsável por fazer requisições.
 import { HttpClient } from "@angular/common/http";
+//Responsável por definir um componente em Angular.
 import { Component } from "@angular/core";
+//Serviço para o envio de mensagens snack bar.
 import { MatSnackBar } from "@angular/material/snack-bar";
+//Serviço Angular para navegar entre views.
 import { ActivatedRoute, Router } from "@angular/router";
+//Os modelos das classes Pátio e Carro.
 import { Patio } from "../../../models/patio.model";
 import { Carro } from "../../../models/carro.model";
 
@@ -11,6 +16,7 @@ import { Carro } from "../../../models/carro.model";
   	styleUrls: ["./carro-alterar.component.css"],
 })
 
+//Declaração das propriedades de classe para o formulário CarroAlterar
 export class CarroAlterarComponent {
 	carroId: number = 0;
   	marca: string = "";
@@ -19,6 +25,7 @@ export class CarroAlterarComponent {
   	patioId: number = 0;
   	patios: Patio[] = [];
 
+	//Serviços: HttpClient para realizar requisições HTTP, Router para navegação, MatSnackBar para exibição de notificações e.
 	constructor(
     	private client: HttpClient,
     	private router: Router,
@@ -26,7 +33,8 @@ export class CarroAlterarComponent {
     	private route: ActivatedRoute
   	) {}
 
-  	ngOnInit(): void {
+  	//Quando a página é iniciada (chamada), ela já invoca o ngOnInit abaixo:
+	ngOnInit(): void {
     	this.route.params.subscribe({
       		next: (parametros) => {
         		let { id } = parametros;

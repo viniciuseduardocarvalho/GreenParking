@@ -1,0 +1,24 @@
+//Aqui constam as rotas de teste para cada função da Controller de pátios.
+
+GET https://localhost:7273/api/patio/listar
+
+GET https://localhost:7273/api/patio/buscar/6
+
+POST https://localhost:7273/api/patio/cadastrar
+Content-Type: application/json
+
+{
+    "patioId" : 1,
+    "nome" : "Anel Central",
+    "endereço" : "321 Rua Westphalen",
+    "quantidadeVagas" : 30
+}
+
+PUT https://localhost:7273/api/patio/alterar/6
+Content-Type: application/json
+
+{
+    "nome" : "Estação Central"
+}
+
+DELETE https://localhost:7273/api/patio/deletar/6

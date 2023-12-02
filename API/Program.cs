@@ -2,6 +2,7 @@
 onde estão localizadas informações referentes ao nosso AppDataContext.*/
 using Microsoft.EntityFrameworkCore;
 using API.Data;
+using Microsoft.JSInterop.Infrastructure;
 
 /* Cria-se uma instância do WebApplicationBuilder, utilizado para configurar a aplicação - faz parte do modelo de hospedagem simplificada introduzido no ASP.NET Core 6.*/
 var builder = WebApplication.CreateBuilder(args);

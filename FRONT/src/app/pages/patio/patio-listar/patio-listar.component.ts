@@ -1,6 +1,10 @@
+//Cliente Http do Angular responsável por fazer requisições.
 import { HttpClient } from "@angular/common/http";
+//Responsável por definir um componente em Angular.
 import { Component } from "@angular/core";
+//Serviço para o envio de mensagens snack bar.
 import { MatSnackBar } from "@angular/material/snack-bar";
+//Os modelos das classes Pátio e Carro.
 import { Patio } from "../../../models/patio.model";
 import { Carro } from "../../../models/carro.model";
 
@@ -16,13 +20,14 @@ export class PatioListarComponent {
     	"nome",
     	"endereco",
 		"quantidadeVagas",
-    	"alterar",
+		"alterar",
 		"deletar",
   	];
   
 	patios: Patio[] = [];
 
-  	constructor(
+  	//Serviços: HttpClient para realizar requisições HTTP e MatSnackBar para exibição de notificações.
+	constructor(
     	private client: HttpClient,
     	private snackBar: MatSnackBar
   	){
@@ -30,11 +35,14 @@ export class PatioListarComponent {
     //nossa API
   	}
 
-  	ngOnInit(): void {
-    	this.client
+  	//Quando a página é iniciada (chamada), ela já invoca o ngOnInit abaixo:
+	ngOnInit(): void {
+    	//Esse cliente Http busca um array de pátios através da rota api/patio/listar...
+		this.client
       	.get<Patio[]>("https://localhost:7273/api/patio/listar")
       	.subscribe({
         	//Requisição com sucesso
+			//...e se conseguir encontrar, exibe o array de pátios na forma de tabela.
         	next: (patios) => {
           		console.table(patios);
           		this.patios = patios;
@@ -46,14 +54,16 @@ export class PatioListarComponent {
       	});
   	}
 
-  	deletar(patioId: number) {
-    	// Check if there are associated cars
+  	//Método deletar: *Lembra-se da regra de negócio que pátio com carro estacionado nele não pode ser deletado.
+	deletar(patioId: number) {
+    	//Verifica se há carros associados ao pátio.
     	this.client
       	.get<Carro[]>(`https://localhost:7273/api/carro/porPatio/${patioId}`)
       	.subscribe({
         	next: (carros) => {
-          		if (carros && carros.length > 0) {
-            	// Associated cars found, display error message
+          		//Se a variável alocada carros existe e o tamanho dela é maior do que zero...
+				if (carros && carros.length > 0) {
+            	//...sinal de que há carros estacionados naquele pátio. Exibe mensagem de erro.
             		this.snackBar.open(
               			"Este pátio contém carros. Primeiro, remova ou mova os carros.",
               			"Green Parking",
@@ -65,7 +75,7 @@ export class PatioListarComponent {
             		);
           		} 
 				else {
-            		// No associated cars, proceed with deletion
+            		// Do contrário, não há carros associados. Prosseguir com deleção.
             		this.client
               		.delete<Patio[]>(`https://localhost:7273/api/patio/deletar/${patioId}`)
               		.subscribe({

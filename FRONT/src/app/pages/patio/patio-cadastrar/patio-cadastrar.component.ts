@@ -1,7 +1,12 @@
+//Cliente Http do Angular responsável por fazer requisições.
 import { HttpClient } from "@angular/common/http";
+//Responsável por definir um componente em Angular.
 import { Component } from "@angular/core";
+//Serviço para o envio de mensagens snack bar.
 import { MatSnackBar } from "@angular/material/snack-bar";
+//Serviço Angular para navegar entre views.
 import { Router } from "@angular/router";
+//O modelo da classe Pátio.
 import { Patio } from "../../../models/patio.model";
 
 @Component({
@@ -10,12 +15,14 @@ import { Patio } from "../../../models/patio.model";
   	styleUrls: ["./patio-cadastrar.component.css"],
 })
 
+//Declaração das propriedades de classe para o formulário PatioCadastrar
 export class PatioCadastrarComponent {
   	nome: string = "";
   	endereco: string = "";
   	quantidadeVagas: number | null = null;
 
-  	constructor(
+  	//Serviços: HttpClient para realizar requisições HTTP, Router para navegação e MatSnackBar para exibição de notificações.
+	constructor(
     	private client: HttpClient,
     	private router: Router,
     	private snackBar: MatSnackBar
@@ -23,14 +30,17 @@ export class PatioCadastrarComponent {
 
   	ngOnInit(): void {}
 
-  	cadastrar(): void {
-    	let patio: Patio = {
+  	//Método cadastrar
+	cadastrar(): void {
+    	//Declaração da variável local patio que recebe dados para os atributos a partir daquilo que é preenchido no formulário na página .html
+		let patio: Patio = {
       	nome: this.nome,
       	endereco: this.endereco,
       	quantidadeVagas: this.quantidadeVagas,
     	};
 
-    	this.client
+    	//O cliente Http posta (salva) essa instância de pátio através da rota api/patio/cadastrar
+		this.client
       	.post<Patio>(
         "https://localhost:7273/api/patio/cadastrar",
         patio
