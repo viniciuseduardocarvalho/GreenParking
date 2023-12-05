@@ -1697,11 +1697,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/viniciuseduardocarvalho/Desktop/GreenParking/API/API.csproj",
+      "projectUniqueName": "/Users/viniciuseduardocarvalho/Documents/GreenParking/API/API.csproj",
       "projectName": "API",
-      "projectPath": "/Users/viniciuseduardocarvalho/Desktop/GreenParking/API/API.csproj",
+      "projectPath": "/Users/viniciuseduardocarvalho/Documents/GreenParking/API/API.csproj",
       "packagesPath": "/Users/viniciuseduardocarvalho/.nuget/packages/",
-      "outputPath": "/Users/viniciuseduardocarvalho/Desktop/GreenParking/API/obj/",
+      "outputPath": "/Users/viniciuseduardocarvalho/Documents/GreenParking/API/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/viniciuseduardocarvalho/.nuget/NuGet/NuGet.Config"
